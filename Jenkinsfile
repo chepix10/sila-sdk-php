@@ -14,7 +14,7 @@ pipeline {
             steps {
                 sh 'composer test:coverage'
                 step([
-                    $class: 'CloverPublisher'
+                    $class: 'CloverPublisher',
                     cloverReportDir: 'build',
                     cloverReportFileName: 'coverage-clover.xml',
                     healthyTarget: [methodCoverage: 70, conditionalCoverage: 80, statementCoverage: 80], // optional, default is: method=70, conditional=80, statement=80
